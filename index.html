@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/styles/styles.css" />
   
   <title>Frontend Mentor | Conference ticket generator</title>
 
@@ -16,42 +17,82 @@
 </head>
 <body>
 
-  <!-- Form starts -->
+  <!-- container header and the logo-->
+  <div class="container">
+    <header class="container_header">
+      <img src="./assets/images/logo-full.svg" alt="Full conference logo" />
+    </header>
 
-  Your Journey to Coding Conf 2025 Starts Here!
+    <!-- main container-->
+     <main class="container_main">
+      <section class="main_intro active">
+        <div class="intro_body">
+          <h1 class="body_title"> Your journey to coding conference 2025 starts here! </h1>
+          <h2 class="body_text"> Secure your spot at this year's biggest coding conference </h2>
+        </div>
 
-  Secure your spot at next year's biggest coding conference.
+        <!--create a form action to upload avatar and image-->
+        <form action="#" class="intro_form">
+          <div class="form_box">
+            <label for="file" class="box_label">upload avatar</label>
+            <div class="custom-upload">
+              <div class="custom-upload_empty active">
+                <img src="./assets/images/icon-upload.svg" alt="upload icon" />
+                <p> Drag and drop or click to upload </p>
+                <input type="file" accept="image/jpeg, image/png" id="file" class="box_input" />
+              </div>
+              
+              <!--display avatar image for the uploaded image-->
+            
+              <div class="custom-upload_loaded">
+                <div class="custom-upoad_image">
+                  <img src="./assets/images/image-avatar.jpg" alt="Your Avatar" />
+                </div>
+                <!--add buttons to remove the image and to change the image-->
+                <div id="buttonsBox" class="buttons">
+                  <input type="button" id="remove" value="Reomove image" />
+                  <input type="button" id="change" value="Change image" />
+                  
+                </div>
+              </div>
+            </div>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+            <!--add a box note to display the message-->
+            <p class="box_note">
+              <img src="./assets/images/icon-info.svg" alt="Note icon" />
+              <span class="msg active"> upload your Photo ( JPG or PNG, max size: 500kb).</span>
+              <span class="error"> Please upload a small Photo</span>
+            </p>
+          </div>
 
-  Full Name
+          <!--we are a creating a box for entering the user details-->
+          <div class="form_box">
+            <label for="text" class="box_label">Full Name </label>
+            <input type="text" id="name" class="box_input" placeholder="John Doe"/>
+            <p class="error">Enter Your Name</p>
 
-  Email Address
-  example@email.com
+          </div>
+          
+          <div class="form_box">
+            <label for="email" class="box_label"> Email Address</label>
+            <input type="email" id="email" class="box_input" placeholder="example@email.com"/>
+            <p class="error"> Enter a valid email man!</p>
+          </div>
 
-  GitHub Username
-  @yourusername
+          <div class="form_box">
+            <label for="text" class="box_label">Github username</label>
+            <input type="text" id="username" class="box_input" placeholder="@yourusernme"/>
+            <p class="error">Enter your Github username</p>
+          </div>
 
-  Generate My Ticket
+          <div class="form_box">
+            <input type="button" id="submit" value="Generate my  ticket" class="form_box"/>
+          </div>
+        </form>
 
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        
+      </section>
+     </main>
   </div>
 </body>
 </html>
